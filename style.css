@@ -1,61 +1,82 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-* {
+:root {
+  --border-rad-lg: 15px;
+  --medium-light-text: #586e88;
+  --light-text: #fcfcfc;
+  --dark-bg: #16202c;
+  --light-bg: #1f2937;
+  --primary-color: #24976f;
+  --secondary-color: #253b4b;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #1d1c27; /* Background color */
+  font-family: "Inter", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: #b5b5b5; /* Paragraph text color */
 }
 
 /* TRANSITION */
-
 a,
 .btn {
   transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
-
-nav,
-.nav-links {
-  display: flex;
-}
-
 nav {
+  background-color: #1d1c27; /* Navbar background color */
+  display: flex;
   justify-content: space-around;
   align-items: center;
   height: 17vh;
 }
 
 .nav-links {
+  display: flex;
   gap: 2rem;
   list-style: none;
   font-size: 1.5rem;
 }
 
 a {
-  color: black;
+  color: white; /* Link color */
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
-  color: grey;
+  color: #b5b5b5; /* Link hover color */
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: #b5b5b5; /* Link hover underline color */
 }
 
 .logo {
@@ -64,10 +85,10 @@ a:hover {
 
 .logo:hover {
   cursor: default;
+  color: white; /* Logo hover color */
 }
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
   display: none;
 }
@@ -89,19 +110,19 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
-  transition: all 0.3 ease-in-out;
+  background-color: white; /* Hamburger lines color */
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: #1d1c27; /* Menu background color */
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links a {
@@ -109,9 +130,8 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
+  color: white; /* Menu link color */
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
 }
 
 .menu-links li {
@@ -134,21 +154,9 @@ a:hover {
   transform: rotate(-45deg) translate(10px, -5px);
 }
 
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
 /* SECTIONS */
-
 section {
+  background-color: #1d1c27; /* Section background color */
   padding-top: 4vh;
   height: 96vh;
   margin: 0 10rem;
@@ -161,63 +169,59 @@ section {
 }
 
 /* PROFILE SECTION */
-
+/* PROFILE SECTION */
 #profile {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Update this line */
   gap: 5rem;
-  height: 80vh;
+  height: 100vh; /* Update this line */
+  padding: 2rem; /* Add some padding */
 }
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 600px; /* Update this line */
+  width: 600px; /* Update this line */
   margin: auto 0;
 }
 
 .section__text {
   align-self: center;
-  text-align: center;
+  text-align: left; /* Update this line */
+  font-size: 2rem; /* Update this line */
 }
 
 .section__text p {
   font-weight: 600;
-}
-
-.section__text__p1 {
-  text-align: center;
-}
-
-.section__text__p2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem; /* Update thisline */
 }
 
 .title {
-  font-size: 3rem;
-  text-align: center;
+  font-size: 4rem; /* Update this line */
+  color: white; /* Title color */
+  text-align: left; /* Update this line */
 }
 
 #socials-container {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  justify-content: left; /* Update this line */
+  margin-top: 2rem;
+  gap: 2rem;
+  color: white; /* Socials color */
 }
 
 /* ICONS */
-
 .icon {
   cursor: pointer;
   height: 2rem;
+  color: white; /* Default icon color */
 }
 
 /* BUTTONS */
-
+/* BUTTONS */
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
@@ -227,42 +231,25 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+  border: 1px solid #fff; /* Default border color */
+  color: #fff; /* Default text color */
+  background-color: transparent; /* Default background color */
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: #000; /* Button hover background color */
 }
 
 .btn-color-2 {
-  background: none;
+  border: 1px solid #fff; /* Border color for btn-color-2 */
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-  gap: 1rem;
+  background: #212121; /* Button hover background color */
+  border-color: #fff; /* Border color on hover */
 }
 
 /* ABOUT SECTION */
-
 #about {
   position: relative;
 }
@@ -285,6 +272,7 @@ section {
 
 .about-pic {
   border-radius: 2rem;
+  border-color: #a3a3a3;
 }
 
 .arrow {
@@ -296,10 +284,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: #1d1c27; /* Details background color */
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: #a3a3a3 0.1rem solid;
+  color: white; /* Details text color */
   text-align: center;
 }
 
@@ -308,20 +296,13 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
 /* EXPERIENCE SECTION */
-
 #experience {
   position: relative;
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  color: #b5b5b5; /* Subtitle color */
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -351,17 +332,17 @@ article {
 
 article .icon {
   cursor: default;
+  color: white; /* Icon color */
 }
 
 /* PROJECTS SECTION */
-
 #projects {
   position: relative;
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border-color: #a3a3a3;
+  background: #fafafa; /* Background color */
 }
 
 .project-img {
@@ -372,16 +353,15 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: black;
+  color: #000; /* Project title color */
 }
 
 .project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+  color: #000; /* Project button text color */
+  border-color: #a3a3a3;
 }
 
 /* CONTACT */
-
 #contact {
   display: flex;
   justify-content: center;
@@ -393,9 +373,8 @@ article .icon {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  border: #a3a3a3 0.1rem solid;
+  background: #fafafa; /* Background color */
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -410,6 +389,7 @@ article .icon {
 
 .contact-info-container p {
   font-size: larger;
+  color: #000; /* Contact info color */
 }
 
 .contact-icon {
@@ -421,12 +401,95 @@ article .icon {
 }
 
 /* FOOTER SECTION */
-
 footer {
   height: 26vh;
   margin: 0 1rem;
 }
 
-footer p {
+.footer-icons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+  color: white; /* Footer icons color */
+}
+
+hr {
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.copyright {
   text-align: center;
+  color: white; /* Copyright text color */
+  font-size: 0.75rem;
+}
+
+.font-family {
+  font-family: "Inter", sans-serif;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.page-container {
+  padding: 5rem 6rem;
+}
+
+.button {
+  font-size: 18px;
+  height: 50px;
+  min-width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #4338ca;
+  color: #dbdbdb;
+  cursor: pointer;
+}
+
+.rounded {
+  border-radius: 55px;
+}
+
+.links a {
+  font-family: "Monaco", monospace;
+  opacity: 0.5;
+}
+
+.links a:hover {
+  opacity: 0.8;
+}
+
+.button:hover {
+  background-color: #544ad4;
+  color: white;
+}
+
+.subtitle {
+  margin-top: 0.3rem !important;
+}
+
+@media screen and (max-width: 900px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .page-container {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-container {
+    padding: 2rem 2rem;
+  }
 }
