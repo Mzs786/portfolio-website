@@ -169,7 +169,6 @@ section {
 }
 
 /* PROFILE SECTION */
-/* PROFILE SECTION */
 #profile {
   display: flex;
   justify-content: flex-start; /* Update this line */
@@ -182,7 +181,7 @@ section {
   display: flex;
   height: 600px; /* Update this line */
   width: 600px; /* Update this line */
-  margin: auto 0;
+  margin: 1rem 0;
 }
 
 .section__text {
@@ -193,13 +192,26 @@ section {
 
 .section__text p {
   font-weight: 600;
-  font-size: 1.5rem; /* Update thisline */
+  font-size: 3.5rem;
+  position: relative;
 }
 
 .title {
   font-size: 4rem; /* Update this line */
   color: white; /* Title color */
   text-align: left; /* Update this line */
+}
+
+.title .section__text p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid #fff;
+  background-color: #1d1c27;
+  animation: animateTxt 5s steps(25) infinite;
 }
 
 #socials-container {
@@ -217,7 +229,6 @@ section {
   color: white; /* Default icon color */
 }
 
-/* BUTTONS */
 /* BUTTONS */
 .btn-container {
   display: flex;
@@ -237,7 +248,12 @@ section {
 }
 
 .btn-color-1:hover {
-  background: #000; /* Button hover background color */
+  background: #b5b5b5;
+  border-color: #fff; /* Button hover background color */
+}
+
+.btn-color-1:active {
+  transform: scale(0.95);
 }
 
 .btn-color-2 {
@@ -245,8 +261,8 @@ section {
 }
 
 .btn-color-2:hover {
-  background: #212121; /* Button hover background color */
-  border-color: #fff; /* Border color on hover */
+  background: #b5b5b5; /* Button hover background color */
+  border-color: white; /* Border color on hover */
 }
 
 /* ABOUT SECTION */
@@ -491,5 +507,20 @@ h2 {
 
   .page-container {
     padding: 2rem 2rem;
+  }
+}
+
+@keyframes animateTxt {
+  3% {
+    left: 0;
+  }
+  30% {
+    left: 100;
+  }
+  80% {
+    left: 100;
+  }
+  100% {
+    left: 0;
   }
 }
